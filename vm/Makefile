@@ -1,5 +1,4 @@
 NAME = corewar
-VALIDATOR_PATH = ../validator
 LIBFT_PATH = ../libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
@@ -21,14 +20,10 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): validator compiling $(OBJS) $(LIBFT)
+$(NAME): $(OBJS) $(LIBFT)
 	@echo "$(GREEN)" Linking $(NAME)... "$(RESET)"
 	@$(CC) $(FLAGS) $(INCLUDES) $(OBJS) $(LIBFT) -o $(NAME) -lncurses
 	@echo "$(GREEN)" Done! "$(RESET)"
-
-validator:
-	@make -C $(VALIDATOR_PATH)
-	@$(VALIDATOR_PATH)/validator
 
 %.o: %.c 
 	@$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
