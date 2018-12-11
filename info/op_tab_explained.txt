@@ -1,0 +1,10 @@
+Clarification of op_tab.h
+
+Every entry represents the following format:
+
+{mnemonic, num_params, type_valid_params, op_code, num_cycles, ?, modifies_carry, is_encoding_byte}
+
+
+Extra:
+-	last entry of op_tab has to be wrong. Change 1, 0 to 0, 1.
+-	ldi does not modify the carry.
