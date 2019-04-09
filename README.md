@@ -1,4 +1,5 @@
 # corewar
+Fight between programs running on a virtual machine.
 
 ## Installation 
 
